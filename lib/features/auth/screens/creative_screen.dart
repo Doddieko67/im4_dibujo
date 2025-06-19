@@ -61,31 +61,35 @@ class _CreativeScreenState extends State<CreativeScreen> {
       if (byteData != null) {
         final Uint8List pngBytes = byteData.buffer.asUint8List();
         final directory = await getApplicationDocumentsDirectory();
-        final path =
+        final String savedPath =
             '${directory.path}/drawing_${DateTime.now().millisecondsSinceEpoch}.png';
-        final file = File(path);
+        final file = File(savedPath);
         await file.writeAsBytes(pngBytes);
 
-        setState(() {
-          savedDrawings.add(path);
-        });
+        if (mounted) {
+          setState(() {
+            savedDrawings.add(savedPath);
+          });
 
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: const Text('¡Dibujo guardado!'),
-            action: SnackBarAction(
-              label: 'Analizar con IA',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => OrigamiInstructionsScreen(drawingPath: path),
-                  ),
-                );
-              },
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: const Text('¡Dibujo guardado!'),
+              action: SnackBarAction(
+                label: 'Analizar con IA',
+                onPressed: () {
+                  if (mounted) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => OrigamiInstructionsScreen(drawingPath: savedPath),
+                      ),
+                    );
+                  }
+                },
+              ),
             ),
-          ),
-        );
+          );
+        }
       }
     } catch (e) {
       print("⚠️ Error al guardar el dibujo: $e");

@@ -55,7 +55,7 @@ class _TutorialDetailScreenState extends State<TutorialDetailScreen> {
     final data = doc.data();
     final completados = List<String>.from(data?['tutorialesCompletados'] ?? []);
 
-    if (completados.contains(widget.videoId)) {
+    if (completados.contains(widget.videoId) && mounted) {
       setState(() {
         _tutorialAlreadyCompleted = true;
       });
@@ -64,9 +64,11 @@ class _TutorialDetailScreenState extends State<TutorialDetailScreen> {
 
   void _startTimer() {
     Future.delayed(const Duration(seconds: 20), () {
-      setState(() {
-        _buttonEnabled = true;
-      });
+      if (mounted) {
+        setState(() {
+          _buttonEnabled = true;
+        });
+      }
     });
   }
 
@@ -151,6 +153,12 @@ class _TutorialDetailScreenState extends State<TutorialDetailScreen> {
     }
   }
 
+  @override
+  void dispose() {
+    _controller.close();
+    super.dispose();
+  }
+
   Color _getDifficultyColor(String difficulty) {
     switch (difficulty.toLowerCase()) {
       case 'fácil':
@@ -162,12 +170,6 @@ class _TutorialDetailScreenState extends State<TutorialDetailScreen> {
       default:
         return Colors.blueGrey;
     }
-  }
-
-  @override
-  void dispose() {
-    _controller.close();
-    super.dispose();
   }
 
   @override
