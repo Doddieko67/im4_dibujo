@@ -1,0 +1,48 @@
+a ver
+el flujo seria asi:
+
+iniciar sesion ->
+ir a la plantilla para dibujar ->
+guardar/descargar ->
+la IA lo analiza ->
+la IA da instrucciones de como hacer origami (aqui es donde tengo una duda, si texto o por imagenes) ->
+esas instrucciones se guardan ->
+se sale de la plantilla ->
+ve el hisotiral de sus plantillas de origamis junto a las instrucciones de IA
+no?
+La parte donde 
+
+Se le da a la IA de instrucciones de como hacer, en imágenes lo pidió 
+Demostrando los dobleces a hacer, conforme a la figura del dibujo 
+
+Antes de lo de:
+Las instrucciones se guardan 
+
+Ahí pidió que metieramos 
+Que muestre la plantilla de la figura a armar para imprimir o descargar (hecha por IA )
+
+Y que de más opciones del internet de esa figura
+mmmm, dame ejemplos de opciones del internet
+es decir, la IA te da links tales como de youtube, webs que te instruyen
+y asi?
+Algo así
+Pero en vez de links a Youtube o así
+Únicamente te da imágenes de internet
+aaaaaaa yayayay
+entonces a ver
+cuando esas instrucciones se generan, se van mostrando las imagenes secuenciales
+y al final, da recomendaciones de imagenes por Internet
+no?
+como
+Sip exactamente así
+Bueno..
+Y una plantilla de la figura generada por IA
+la IA lo analiza ->
+la IA crea imagenes ->
+la IA recomienda imagenes encontradas por Internet ->
+se guardan las instrucciones (imagenes) y hay opcion de imprimitlas o descargarlas ->
+se sale de la plantilla
+no?
+Sisisis
+vaaa
+Si, gracias

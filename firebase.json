@@ -1,0 +1,31 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "im4-dibujos",
+          "appId": "1:333758494548:android:72b1ed1b8ea6aeb231bac1",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "im4-dibujos",
+          "configurations": {
+            "android": "1:333758494548:android:72b1ed1b8ea6aeb231bac1",
+            "ios": "1:333758494548:ios:cabf324c4dae65f631bac1",
+            "macos": "1:333758494548:ios:cabf324c4dae65f631bac1",
+            "web": "1:333758494548:web:310e4b8031cf642631bac1",
+            "windows": "1:333758494548:web:de0de20ce46894cc31bac1"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "database": "(default)",
+    "location": "nam5",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}

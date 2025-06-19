@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Regla para usuarios - solo pueden leer/escribir sus propios datos
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // Permitir a otros usuarios leer información básica para búsquedas
+      allow read: if request.auth != null && 
+                     resource.data.keys().hasAny(['username', 'level', 'profileImage']);
+      
+      // Subcollecciones de cada usuario
+      match /{subcollection=**} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+    
+    // Reglas para videos guardados/liked por usuarios
+    match /users/{userId}/likedVideos/{videoId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Reglas para contenido público (si existe)
+    match /public/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if false; // Solo administradores pueden escribir contenido público
+    }
+    
+    // Reglas para estadísticas generales (solo lectura para usuarios autenticados)
+    match /stats/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if false; // Solo funciones de servidor pueden actualizar stats
+    }
+    
+    // Denegar acceso por defecto a cualquier otra ruta
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

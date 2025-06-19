@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "333758494548",
+    "project_id": "im4-dibujos",
+    "storage_bucket": "im4-dibujos.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:333758494548:android:72b1ed1b8ea6aeb231bac1",
+        "android_client_info": {
+          "package_name": "com.example.mundo_origami"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "333758494548-mouhd2tar8qd7ou9kdsec9l2sr1kpigh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mundo_origami",
+            "certificate_hash": "a5ad29cffaf99219ba45669208d88338772215f7"
+          }
+        },
+        {
+          "client_id": "333758494548-k1eehonjbth4jk6rsoaluvt9iua5qvbk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIT65TccMBrFgOpRPdlMPJPp7FaGTYMVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333758494548-k1eehonjbth4jk6rsoaluvt9iua5qvbk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "333758494548-gm04d0l98ll6evi2gqrmr3t613lhsbne.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mundoOrigami"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
